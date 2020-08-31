@@ -1,0 +1,28 @@
+<div class="ui stackable three column grid">
+    <div class="column"></div>
+    <div class="column pt-5 pb-5">
+      <div class="ui container">
+        <div class="ui raised segment">
+          <h1 class="ui centered header">Complaint Status</h1>
+          <form class="ui form" [formGroup]="complaintForm" (ngSubmit)="onComplaintSubmit()">
+            <div class="field">
+              <label>Tracking ID</label>
+              <div class="ui left icon input">
+                <i class="location arrow icon"></i>
+                <input type="text" name="trackingID" formControlName="trackingID" placeholder="Tracking ID">
+              </div>
+            </div>
+            <div class="field">
+              <label>PF Number</label>
+              <div class="ui left icon input">
+                <i class="mobile alternate icon"></i>
+                <input type="text" name="pfNum" formControlName="pfNum" placeholder="PF Number">
+              </div>
+            </div>
+            <input type="submit" class="ui fluid blue button" value="Track" [disabled]="!this.complaintForm.valid">
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="column"></div>
+  </div>

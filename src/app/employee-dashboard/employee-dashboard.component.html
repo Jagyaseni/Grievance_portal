@@ -1,0 +1,91 @@
+<div class="ui three column grid">
+  <div class="column">
+    <div class="ui segment">
+      <div class="ui fluid card">
+        <div class="content">
+          <div class="ui right floated header teal">
+            <i class="icon clock"></i>
+          </div>
+          <div class="header">
+            <div class="ui teal header">
+              x
+            </div>
+          </div>
+          <div class="meta">
+            count
+          </div>
+          <div class="description">
+            Total grievances
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="ui segment">
+      <div class="ui fluid card">
+        <div class="content">
+          <div class="ui right floated header green">
+            <i class="icon clock"></i>
+          </div>
+          <div class="header">
+            <div class="ui header green">y</div>
+          </div>
+          <div class="meta">
+            count
+          </div>
+          <div class="description">
+            solved grievances
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="ui segment">
+      <div class="ui fluid card">
+        <div class="content">
+          <div class="ui right floated header red">
+            <i class="icon clock"></i>
+          </div>
+          <div class="header">
+            <div class="ui red header">z</div>
+          </div>
+          <div class="meta">
+            count
+          </div>
+          <div class="description">
+            active grievances
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<table class="ui celled table">
+  <thead>
+    <tr>
+      <th class="">
+        Tracking ID
+      </th>
+      <th class="">
+        Title
+      </th>
+      <th class="">
+        Description
+      </th>
+      <th class="">
+        Issued On
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of grievance$ | async">
+      <td>{{item.trackingID}}</td>
+      <td>{{item.title}}</td>
+      <td>{{item.description}}</td>
+      <td>{{item.issuedOn}}</td>
+    </tr>
+  </tbody>
+</table>

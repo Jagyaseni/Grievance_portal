@@ -1,0 +1,23 @@
+<div class="p-5">
+  <div class="ui large centered bold header">Admin</div>
+  <table class="ui compact celled table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>PF Number</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let admin of admin$ | async">
+        <td>{{admin.firstName + ' ' + admin.lastName}}</td>
+        <td>{{admin.pfNum}}</td>
+        <td>
+          <div class="ui right floated small primary labeled icon button">
+            <i class="user icon"></i> Make Establishment Officer
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

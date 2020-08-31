@@ -1,0 +1,166 @@
+<div class="ui container">
+  <div class="ui padded grid">
+    <div class="row">
+      <div class="column">
+        <div class="ui dividing huge header">Add Employee</div>
+        <div class="ui segment">
+          <form class="ui form" [formGroup]="addForm" (ngSubmit)="addEmployee()">
+            <div class="three fields">
+              <div class="field">
+                <label>First Name</label>
+                <input type="text" placeholder="First Name" formControlName="firstName">
+              </div>
+              <div class="field">
+                <label>Last Name</label>
+                <input type="text" placeholder="Last Name" formControlName="lastName">
+              </div>
+              <div class="field">
+                <label>Email</label>
+                <input type="email" placeholder="Email" formControlName="email">
+              </div>
+            </div>
+            <div class="two fields">
+              <div class="field">
+                <label>Mobile Number</label>
+                <input type="text" placeholder="Mobile Number" formControlName="mobileNum">
+              </div>
+              <div class="field">
+                <label>PF Number</label>
+                <input type="text" placeholder="PF Number" formControlName="pfNum">
+              </div>
+            </div>
+            <div class="three fields">
+              <div class="field">
+                <label>City</label>
+                <input type="text" placeholder="City" formControlName="city">
+              </div>
+              <div class="field">
+                <label>State</label>
+                <input type="text" placeholder="State" formControlName="state">
+              </div>
+              <div class="field">
+                <label>Postal Code</label>
+                <input type="text" placeholder="Postal Code" formControlName="postalCode">
+              </div>
+            </div>
+            <input type="submit" value="Add Employee" class="ui green button" [disabled]="!this.addForm.valid" />
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+        <div class="ui dividing huge header">Edit Employee</div>
+        <div class="ui segment">
+          <form class="ui form" [formGroup]="editSearchForm" (ngSubmit)="editSearch()">
+            <div class="field">
+              <label>Enter PF Number of Employee</label>
+              <input type="text" placeholder="PF Number" formControlName="pfNum">
+            </div>
+            <input type="submit" value="Search Employee" class="ui blue button" />
+          </form>
+        </div>
+        <div class="ui segment" [hidden]="!this.editFormValidator()">
+          <form class="ui form" [formGroup]="editForm" (ngSubmit)="editEmployee()">
+            <div class="three fields">
+              <div class="field">
+                <label>First Name</label>
+                <input type="text" placeholder="First Name" formControlName="firstName">
+              </div>
+              <div class="field">
+                <label>Last Name</label>
+                <input type="text" placeholder="Last Name" formControlName="lastName">
+              </div>
+              <div class="field">
+                <label>Email</label>
+                <input type="email" placeholder="Email" formControlName="email">
+              </div>
+            </div>
+            <div class="two fields">
+              <div class="field">
+                <label>Mobile Number</label>
+                <input type="text" placeholder="Mobile Number" formControlName="mobileNum">
+              </div>
+              <div class="field">
+                <label>PF Number</label>
+                <input type="text" placeholder="PF Number" formControlName="pfNum">
+              </div>
+            </div>
+            <div class="three fields">
+              <div class="field">
+                <label>City</label>
+                <input type="text" placeholder="City" formControlName="city">
+              </div>
+              <div class="field">
+                <label>State</label>
+                <input type="text" placeholder="State" formControlName="state">
+              </div>
+              <div class="field">
+                <label>Postal Code</label>
+                <input type="text" placeholder="Postal Code" formControlName="postalCode">
+              </div>
+            </div>
+            <input type="submit" value="Confirm Edit" class="ui yellow button" [disabled]="!this.editFormValidator()" />
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+        <div class="ui dividing huge header">Delete Employee</div>
+        <div class="ui segment">
+          <form class="ui form" [formGroup]="deleteSearchForm" (ngSubmit)="deleteSearch()">
+            <div class="field">
+              <label>Enter PF Number of Employee</label>
+              <input type="text" placeholder="PF Number" formControlName="pfNum">
+            </div>
+            <input type="submit" value="Search Employee" class="ui blue button" />
+          </form>
+        </div>
+        <div class="ui segment" [hidden]="!this.deleteFormValidator()">
+          <form class="ui form" [formGroup]="deleteForm" (ngSubmit)="deleteEmployee()">
+            <div class="three fields">
+              <div class="field">
+                <label>First Name</label>
+                <input type="text" placeholder="First Name" formControlName="firstName">
+              </div>
+              <div class="field">
+                <label>Last Name</label>
+                <input type="text" placeholder="Last Name" formControlName="lastName">
+              </div>
+              <div class="field">
+                <label>Email</label>
+                <input type="email" placeholder="Email" formControlName="email">
+              </div>
+            </div>
+            <div class="two fields">
+              <div class="field">
+                <label>Mobile Number</label>
+                <input type="text" placeholder="Mobile Number" formControlName="mobileNum">
+              </div>
+              <div class="field">
+                <label>PF Number</label>
+                <input type="text" placeholder="PF Number" formControlName="pfNum">
+              </div>
+            </div>
+            <div class="three fields">
+              <div class="field">
+                <label>City</label>
+                <input type="text" placeholder="City" formControlName="city">
+              </div>
+              <div class="field">
+                <label>State</label>
+                <input type="text" placeholder="State" formControlName="state">
+              </div>
+              <div class="field">
+                <label>Postal Code</label>
+                <input type="text" placeholder="Postal Code" formControlName="postalCode">
+              </div>
+            </div>
+            <input type="submit" value="Confirm Delete" class="ui red button" [disabled]="!this.deleteFormValidator()" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

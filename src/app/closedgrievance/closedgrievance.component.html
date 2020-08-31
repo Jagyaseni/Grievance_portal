@@ -1,0 +1,25 @@
+<div class="p-5">
+    <div class="ui large centered bold header">Closed Grievances</div>
+    <table class="ui compact celled table">
+        <thead>
+            <tr>
+              
+              <th>Tracking ID</th>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Action</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let cgrievance of cgrievance$ | async">
+              <td>{{cgrievance.trackingID}}</td>
+              <td>{{cgrievance.title}}</td>
+              <td>{{cgrievance.description}}</td>
+              <td>
+                <div class="ui right floated small primary labeled icon button">Escalate</div>
+              </td>
+            </tr>
+          </tbody>
+    </table>
+</div>

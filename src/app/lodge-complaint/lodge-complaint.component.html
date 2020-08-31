@@ -1,0 +1,35 @@
+<div class="twelve wide column">
+  <form class="ui form" [formGroup]="lodgeComplaintForm" (ngSubmit)="lodgeComplaint()">
+    <h2 class="ui dividing centered header" style="margin-top: 10px;">Complaint Form</h2>
+    <p class="ui red header" [hidden]="this.lodgeComplaintForm.valid">All Fields are mandatory.</p>
+    <div class="two fields">
+      <div class="field">
+        <label>Category Issues</label>
+        <select class="ui fluid dropdown" formControlName="catIssues">
+          <option value="" selected disabled hidden>Category</option>
+          <option *ngFor="let category of categories" value={{category}}>{{category}}</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Sub-Category Issues</label>
+        <select class="ui fluid dropdown" formControlName="subCatIssues">
+          <option value="" selected disabled hidden>Sub-Category</option>
+          <option *ngFor="let subCategory of subCategories" value={{subCategory}}>{{subCategory}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="field">
+      <label>Grievance Title</label>
+      <div class="eight wide field">
+        <input type="text" name="grievance title" placeholder="Grievance Title" formControlName="title">
+      </div>
+    </div>
+    <div class="field">
+      <label>Describe Your Problem</label>
+      <div class="sixteen wide field">
+        <textarea type="text" name="grievance" placeholder="Describe here" formControlName="description"></textarea>
+      </div>
+      <input type="submit" class="ui green button" tabindex="0" [disabled]="!this.lodgeComplaintForm.valid">
+    </div>
+  </form>
+</div>

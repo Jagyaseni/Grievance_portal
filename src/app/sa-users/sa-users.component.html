@@ -1,0 +1,28 @@
+<div class="p-5">
+  <div class="ui large centered bold header">Staff</div>
+  <div class="ui padded grid">
+    <div class="eight wide column">
+      <div class="ui labeled icon green button"><i class="plus icon"></i>Add</div>
+    </div>
+  </div>
+  <table class="ui compact celled table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>PF Number</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let staff of staff$ | async">
+
+        <td>{{staff.firstName + ' ' + staff.lastName}}</td>
+        <td>{{staff.pfNum}}</td>
+        <td>
+          <div class="ui labeled icon yellow button"><i class="pencil icon"></i>Edit</div>
+          <div class="ui labeled icon red button"><i class="trash icon"></i>Delete</div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

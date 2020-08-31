@@ -1,0 +1,25 @@
+<div class="p-5">
+    <div class="ui large centered bold header">Active Grievances</div>
+    <table class="ui compact celled table">
+        <thead>
+            <tr>
+              
+              <th>Tracking ID</th>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Action</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let agrievance of agrievance$ | async">
+              <td>{{agrievance.trackingID}}</td>
+              <td>{{agrievance.title}}</td>
+              <td>{{agrievance.description}}</td>
+              <td>
+                <div class="ui right floated small primary labeled icon button">Add Remarks</div>
+              </td>
+            </tr>
+          </tbody>
+    </table>
+</div>

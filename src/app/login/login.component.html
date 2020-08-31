@@ -1,0 +1,28 @@
+<div class="ui stackable three column grid">
+  <div class="column"></div>
+  <div class="column pt-5 pb-5">
+    <div class="ui container">
+      <div class="ui raised segment">
+        <h1 class="ui centered header">Login</h1>
+        <form class="ui form" [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
+          <div class="field">
+            <label>User ID</label>
+            <div class="ui left icon input">
+              <i class="user icon"></i>
+              <input type="text" formControlName="userID" name="userID" placeholder="User ID">
+            </div>
+          </div>
+          <div class="field">
+            <label>Password</label>
+            <div class="ui left icon input">
+              <i class="lock icon"></i>
+              <input type="password" formControlName="password" name="password" placeholder="Password">
+            </div>
+          </div>
+          <button class="ui fluid green submit button">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="column"></div>
+</div>

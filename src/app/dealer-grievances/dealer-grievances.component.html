@@ -1,0 +1,97 @@
+<div class="p-5">
+    <div class="ui large header">Grievances</div>
+    <div class="ui form">
+      <div class="fields">
+        <div class="field">
+          <label>Category</label>
+          <select class="ui fluid dropdown">
+            <option value="" selected disabled hidden>Category</option>
+            <option value="#">Service Record</option>
+            <option value="#">Salary</option>
+            <option value="#">Staff Benefits</option>
+            <option value="#">Cadre</option>
+            <option value="#">Orderly Room</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Sub-Category</label>
+          <select class="ui fluid dropdown">
+            <option value="" selected disabled hidden>Sub-Category</option>
+            <option value="#">Movable and immovable property</option>
+            <option value="#">Service Register</option>
+            <option value="#">MACP</option>
+            <option value="#">Fixation Settlement</option>
+            <option value="#">APAR</option>
+            <option value="#">Barracks maintenance</option>
+            <option value="#">Pass Application/PTO</option>
+            <option value="#">Medical card/UMID</option>
+            <option value="#">SBF CSBF</option>
+            <option value="#">Quaters</option>
+            <option value="#">Leave</option>
+            <option value="#">Transfer</option>
+            <option value="#">Seniority</option>
+            <option value="#">Promotion</option>
+            <option value="#">Premature Retirement</option>
+            <option value="#">SrDSC</option>
+            <option value="#">PCSC</option>
+            <option value="#">DG</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Status</label>
+          <select class="ui fluid dropdown">
+            <option value="" selected disabled hidden>Status</option>
+            <option value="#">New</option>
+            <option value="#">Pending</option>
+            <option value="#">Closed</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>&nbsp;</label>
+          <div class="ui submit button">Filter</div>
+        </div>
+      </div>
+    </div>
+    <div class="ui divider"></div>
+    <div class="ui selection list">
+      <div class="item" *ngFor="let item of grievances">
+        <div class="ui fluid card">
+          <div class="content">
+            <div class="ui header">{{item.title}}</div>
+            <div class="meta">
+              <span class="date">{{item.dateOfPost}}</span>
+            </div>
+            <div class="description">{{item.description}}</div>
+          </div>
+          <div class="extra content">
+            <div *ngIf="item.status.new" class="ui green label">New</div>
+            <div *ngIf="item.status.pending" class="ui yellow label">Pending</div>
+            <div *ngIf="!item.status.pending" class="ui red label">Closed</div>
+            <div class="right floated">
+              <button *ngIf="!item.status.closed" class="ui button" onclick="$('.ui.modal')
+              .modal('show')
+            ;">Address</button>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div>
+    <div id="addressModal" class="ui modal">
+      <i class="close icon"></i>
+      <div class="header">
+          Closure for XYZ Grievance
+      </div>
+      <div class="content">
+        <p>Grievance Title</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dolor morbi non arcu risus quis varius quam quisque id. Turpis cursus in hac habitasse platea dictumst quisque. Orci a scelerisque purus semper eget duis. Egestas quis ipsum suspendisse ultrices. Eget velit aliquet sagittis id consectetur purus ut faucibus. Id velit ut tortor pretium viverra suspendisse potenti nullam ac. Odio pellentesque diam volutpat commodo sed. Sit amet consectetur adipiscing elit duis tristique sollicitudin nibh sit. Pharetra diam sit amet nisl. Sed lectus vestibulum mattis ullamcorper velit sed. Mollis nunc sed id semper risus. Elementum sagittis vitae et leo.</p>
+        <form>
+          <label>Document of Proof</label>
+          <input type="file">
+        </form>
+      </div>
+      <div class="actions">
+        <div class="ui deny button">Cancel</div>
+        <div class="ui green button">Resolve</div>
+      </div>
+    </div>
+  </div>
